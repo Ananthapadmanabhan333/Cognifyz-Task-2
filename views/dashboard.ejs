@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternHub - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="container">
+        <header class="header dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <nav>
+                <a href="/" class="nav-link">Back to Registration</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h3>Total Registrations</h3>
+                    <div class="stat-value"><%= totalUsers %></div>
+                </div>
+            </div>
+
+            <div class="dashboard-controls">
+                <h2>Registered Users</h2>
+                <form action="/dashboard" method="GET" class="search-form">
+                    <input type="text" name="search" placeholder="Search by name, email or ID..." value="<%= searchQuery %>">
+                    <button type="submit" class="btn-secondary">Search</button>
+                    <% if(searchQuery) { %>
+                        <a href="/dashboard" class="btn-secondary clear-btn">Clear</a>
+                    <% } %>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <% if(users.length === 0) { %>
+                    <div class="no-data">No users found.</div>
+                <% } else { %>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Reg ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Domain</th>
+                                <th>College</th>
+                                <th>Reg Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach(user => { %>
+                                <tr>
+                                    <td><%= user.id %></td>
+                                    <td><strong><%= user.fullName %></strong></td>
+                                    <td><%= user.email %></td>
+                                    <td><span class="badge"><%= user.domain %></span></td>
+                                    <td><%= user.college %></td>
+                                    <td><%= user.registrationDate %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Error</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="error-card">
+            <div class="error-icon">!</div>
+            <h1>Registration Failed</h1>
+            <p>Please fix the following errors and try again:</p>
+            
+            <ul class="error-list">
+                <% errors.forEach(error => { %>
+                    <li><%= error %></li>
+                <% }); %>
+            </ul>
+
+            <div class="action-buttons">
+                <a href="javascript:history.back()" class="submit-btn text-center inline-block">Go Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

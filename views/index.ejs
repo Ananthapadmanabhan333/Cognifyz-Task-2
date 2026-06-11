@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternHub - Registration Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>InternHub Registration</h1>
+            <p>Join the Cognifyz Internship Program</p>
+            <a href="/dashboard" class="nav-link">View Dashboard</a>
+        </header>
+
+        <main class="form-container">
+            <form action="/register" method="POST" id="registrationForm" novalidate>
+                <div class="form-grid">
+                    <!-- Personal Details -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <!-- Academic Details -->
+                    <div class="form-group">
+                        <label for="college">College Name *</label>
+                        <input type="text" id="college" name="college" required>
+                        <span class="error-message" id="collegeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="branch">Branch/Department *</label>
+                        <input type="text" id="branch" name="branch" required>
+                        <span class="error-message" id="branchError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year of Study *</label>
+                        <select id="year" name="year" required>
+                            <option value="">Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                            <option value="Passed Out">Passed Out</option>
+                        </select>
+                        <span class="error-message" id="yearError"></span>
+                    </div>
+
+                    <!-- Professional Details -->
+                    <div class="form-group">
+                        <label for="domain">Interested Domain *</label>
+                        <select id="domain" name="domain" required>
+                            <option value="">Select Domain</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="App Development">App Development</option>
+                        </select>
+                        <span class="error-message" id="domainError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skills">Key Skills</label>
+                        <input type="text" id="skills" name="skills" placeholder="e.g. HTML, CSS, JS">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedin" name="linkedin">
+                        <span class="error-message" id="linkedinError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub Profile URL</label>
+                        <input type="url" id="github" name="github">
+                        <span class="error-message" id="githubError"></span>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required>
+                        <span class="error-message" id="passwordError"></span>
+                        <div class="password-reqs">
+                            Must be 8+ chars, include uppercase, lowercase, number, and special character.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Register Now</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="/js/validation.js"></script>
+</body>
+</html>
