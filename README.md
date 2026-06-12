@@ -73,3 +73,5 @@ The server will start on `http://localhost:3000`. Open this URL in your web brow
 - Checks for presence of all required fields.
 - Re-evaluates Regex patterns to prevent tampering.
 - Collects all errors and renders an error view if validation fails.
+
+Built by Ananthapadmanabhan 
